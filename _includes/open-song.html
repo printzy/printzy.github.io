@@ -1,0 +1,67 @@
+<div id="background">
+    <div id="player">
+        <div class="cover"></div>
+        <div class="ctrl">
+            <div class="tag">
+                <strong>Title</strong>
+                <span class="artist">Artist</span>
+                <span class="album">Album</span>
+            </div>
+            <div class="control">
+                <div class="song_left">
+                    <div class="rewind icon" title="上一曲"></div>
+                    <div class="playback icon" title="暂停"></div>
+                    <div class="fastforward icon" title="下一曲"></div>
+                </div>
+                <div class="volume song_right">
+                    <div class="mute icon song_left"></div>
+                    <div class="slider song_left ui-slider-horizontal ui-corner-all ui-widget-content" id="song_volume">
+                        <div class="pace" title=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="song_progress">
+                <div class="slider ui-corner-all">
+                    <div class="loaded"></div>
+                    <div class="pace"></div>
+                </div>
+                <div class="timer song_left">00:00</div>
+				<div class="song_line">/</div>
+				<div class="timer song_left" id="totaltime">加载中...</div>
+
+                <div class="song_right">
+                    <div class="repeat icon" title="循环"></div>
+                    <div class="shuffle icon" title="随机播放"></div>
+                </div>
+                <a href="#" class="download song_left" id="download" title="下载音乐">下载</a>
+            </div>
+        </div>
+    </div>
+    <ul id="playlist"></ul>
+</div>
+
+<style>
+.volume .ui-corner-all{
+    top: -2.5px !important;
+}
+div.ui-widget-content{
+    border: 0 !important;
+    background: #535353;
+}
+.song_progress .ui-corner-all{
+    top: -2.5px !important;
+}
+.ui-slider-handle{
+    top: 0 !important;
+ }
+
+.post-content p{
+    display: none;
+}
+
+</style>
+
+<!--song js Added by zy 11/09/2019 start-->
+<script src="{{ '/styles/js/song/jquery-ui-1.8.17.custom.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/styles/js/song/script.js' | prepend: site.baseurl }}"></script>
+<!--song js Added by zy 11/09/2019 end-->

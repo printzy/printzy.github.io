@@ -1,0 +1,45 @@
+# Site settings
+name:   PrintZY's blog
+email: 564359804@163.com
+author: PrintZY
+url: https://printzy.github.io/
+resume_site: ''
+github: https://printzy.github.io/
+baseurl: ''
+description: 人生苦短，我用Python！
+meta_description: 个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
+motto: PrintZY
+banner: 学而不思则罔，思而不学则殆。
+revolvermaps: 5z6yv4ukca1
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+# 一页有几篇文章
+paginate: 10
+paginate_path: 'page:num'
+
+# 设置时区，如果设置每个文章头部date结尾添加 +0800，本地运行慢八个小时，GitHub上正常
+# 如果不设置，那么每个文章头部不需添加 +0800，本地运行快八个小时，GitHub上正常
+timezone: Asia/Shanghai
+
+## Gem
+gems: [jekyll-paginate]
+# highlighter: pygments
+
+
+# 就是没有文章的时候显示的提示，未加无分类前:no-category-index,未加无标签前:no-tag-index,未加无归档前:no-archive
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'createNew_MDFile', 'no-archive',
+'/tag/no-tag-index', '/categories/no-category-index','old-reference']
+
+github_username: printzy
+
+# Build settings
+markdown: kramdown
+excerpt_separator: "<!-- more -->"
+
+baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
+
+# gitment
+comment_gitment_repo: printzy.github.io
+comment_gitment_clientId: ef470e8dd7790d6cfe6a
+comment_gitment_clientSecret: dd28a8f4554f56126afdb173c4d22185a9be12b8
