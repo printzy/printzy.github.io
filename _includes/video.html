@@ -64,38 +64,38 @@ function video_embed() {
 }
 video_embed();
 
-function mp3_embed() {
+function mp4_embed() {
     var p = document.getElementsByTagName('p');
-    var song_format = ['.mp3','.m4a','.wma']; // 音乐格式
+    var video_format = ['.mp4','.mkv','.flv','.3gp','.avi','.mpg','.mpeg','.ogg']; // 视频格式
     for(var i = 0; i < p.length; i++) {
-        for(var j=0;j<song_format.length;j++){
-            // 如果出现了上述音乐格式
-            if(p[i].innerHTML.toLowerCase().indexOf(song_format[j]) !== -1) {
-            var str = p[i].innerHTML.split('?');
-            if(str.length == 1) str[1] = '';
-            var str1 = str[1];
-            str1 = str1.replace('&','').replace('&','');
-            str1 = str1.replace('autoplay=1','').replace('autoplay=0','');
-            str1 = str1.replace('loop=1','').replace('loop=0','');
-            str1 = str1.replace('controls=0','').replace('controls=1','');
+        for(var j=0;j<video_format.length;j++){
+            // 如果出现了上述视频格式
+            if(p[i].innerHTML.toLowerCase().indexOf(video_format[j]) !== -1) {
+                var str = p[i].innerHTML.split('?');
+                if(str.length == 1) str[1] = '';
+                var str1 = str[1];
+                str1 = str1.replace('&','').replace('&','');
+                str1 = str1.replace('autoplay=1','').replace('autoplay=0','');
+                str1 = str1.replace('loop=1','').replace('loop=0','');
+                str1 = str1.replace('controls=0','').replace('controls=1','');
 
-            if (str[0].toLowerCase().lastIndexOf(song_format[j], str[0].length - 4) === str[0].length - 4 && str1.length == 0) {
-                // 如果有属性："autoplay=1"，则autoplay=1，否则autoplay=0
-                if(str[1].indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
-                if(str[1].indexOf('loop=1') !== -1) var loop=1; else var loop=0;
-                // controls:向用户显示控件，比如播放按钮
-                if(str[1].indexOf('controls=0') !== -1) var controls=0; else var controls=1;
-                var newInnerHTML = '<audio';
-                if(autoplay==1) newInnerHTML += ' autoplay';
-                if(loop==1) newInnerHTML += ' loop';
-                if(controls==1) newInnerHTML += ' controls';
-                newInnerHTML += '><source src="'+str[0]+'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
-                p[i].innerHTML = newInnerHTML;
-            }
+                if (str[0].toLowerCase().lastIndexOf(video_format[j], str[0].length - 4) === str[0].length - 4 && str1.length == 0) {
+                    // 如果有属性："autoplay=1"，则autoplay=1，否则autoplay=0
+                    if(str[1].indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
+                    if(str[1].indexOf('loop=1') !== -1) var loop=1; else var loop=0;
+                    // controls:向用户显示控件，比如播放按钮
+                    if(str[1].indexOf('controls=0') !== -1) var controls=0; else var controls=1;
+                    var newInnerHTML = '<video width="90%" style="margin-left:20px"';
+                    if(autoplay==1) newInnerHTML += ' autoplay';
+                    if(loop==1) newInnerHTML += ' loop';
+                    if(controls==1) newInnerHTML += ' controls';
+                    newInnerHTML += '><source src="'+str[0]+'" type="audio/mpeg">Your browser does not support the audio element.</video>';
+                    p[i].innerHTML = newInnerHTML;
+                }
             }
         }
 
     }
 }
-mp3_embed();
+mp4_embed();
 </script>
